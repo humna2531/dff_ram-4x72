@@ -1,0 +1,10 @@
+set ::env(PDK) {sky130A}
+set ::env(PDKPATH) {/home/sajjad/OpenLane/pdks/sky130A}
+set ::env(STD_CELL_LIBRARY) {sky130_fd_sc_hd}
+set ::env(SCLPATH) {/home/sajjad/OpenLane/pdks/sky130A/sky130_fd_sc_hd}
+set ::env(DESIGN_DIR) {/openlane/designs/invert}
+set ::env(DESIGN_NAME) {invert}
+set ::env(VERILOG_FILES) {/openlane/designs/invert/src/inverter.v}
+set ::env(CLOCK_PORT) {clk}
+set ::env(CLOCK_PERIOD) {10.0}
+set ::env(DESIGN_IS_CORE) {1}

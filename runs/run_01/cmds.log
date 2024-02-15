@@ -1,0 +1,38 @@
+Wed Jan 31 09:36:13 UTC 2024 - Executing "openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/designs/invert/runs/run_01/tmp/layers.list /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef"
+
+Wed Jan 31 09:36:14 UTC 2024 - Executing "/openlane/scripts/mergeLef.py -o /openlane/designs/invert/runs/run_01/tmp/merged.nom.lef -i /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null"
+
+Wed Jan 31 09:36:14 UTC 2024 - Executing "/openlane/scripts/mergeLef.py -o /openlane/designs/invert/runs/run_01/tmp/merged.min.lef -i /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null"
+
+Wed Jan 31 09:36:14 UTC 2024 - Executing "/openlane/scripts/mergeLef.py -o /openlane/designs/invert/runs/run_01/tmp/merged.max.lef -i /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null"
+
+Wed Jan 31 09:36:14 UTC 2024 - Executing "python3 /openlane/scripts/mergeLib.py --output /openlane/designs/invert/runs/run_01/tmp/synthesis/merged.lib --name sky130A_merged /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"
+
+Wed Jan 31 09:36:15 UTC 2024 - Executing "python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/invert/runs/run_01/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/designs/invert/runs/run_01/tmp/synthesis/trimmed.lib /openlane/designs/invert/runs/run_01/tmp/synthesis/merged.lib"
+
+Wed Jan 31 09:36:15 UTC 2024 - Executing "python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/invert/runs/run_01/tmp/cts/cts.lib.exclude.list --output /openlane/designs/invert/runs/run_01/tmp/cts/cts.lib /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib"
+
+Wed Jan 31 09:36:15 UTC 2024 - Executing "python3 /openlane/scripts/new_tracks.py -i /home/sajjad/OpenLane/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/invert/runs/run_01/tmp/routing/config.tracks"
+
+Wed Jan 31 09:36:15 UTC 2024 - Executing "echo {OpenLane f507637dbcb9e58fa08bcf86ce54289c23cd6817} > /openlane/designs/invert/runs/run_01/OPENLANE_VERSION"
+
+Wed Jan 31 09:36:26 UTC 2024 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/invert/runs/run_01/tmp/synthesis/1-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib"
+
+Wed Jan 31 09:36:26 UTC 2024 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/invert/runs/run_01/tmp/synthesis/trimmed.lib > /openlane/designs/invert/runs/run_01/tmp/synthesis/1-trimmed.no_pg.lib"
+
+Wed Jan 31 09:36:26 UTC 2024 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/invert/runs/run_01/logs/synthesis/1-synthesis.log"
+
+Wed Jan 31 09:40:48 UTC 2024 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/invert/runs/run_01/tmp/synthesis/2-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib"
+
+Wed Jan 31 09:40:48 UTC 2024 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/invert/runs/run_01/tmp/synthesis/trimmed.lib > /openlane/designs/invert/runs/run_01/tmp/synthesis/2-trimmed.no_pg.lib"
+
+Wed Jan 31 09:40:49 UTC 2024 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/invert/runs/run_01/logs/synthesis/2-synthesis.log"
+
+Wed Jan 31 09:41:14 UTC 2024 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/sajjad/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/invert/runs/run_01/tmp/synthesis/3-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib"
+
+Wed Jan 31 09:41:14 UTC 2024 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/invert/runs/run_01/tmp/synthesis/trimmed.lib > /openlane/designs/invert/runs/run_01/tmp/synthesis/3-trimmed.no_pg.lib"
+
+Wed Jan 31 09:41:14 UTC 2024 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/invert/runs/run_01/logs/synthesis/3-synthesis.log"
+
+Wed Jan 31 09:41:15 UTC 2024 - Executing "python3 /openlane/scripts/generate_reports.py -d /openlane/designs/invert --design_name invert --tag run_01 --output_file /openlane/designs/invert/runs/run_01/reports/metrics.csv --man_report /openlane/designs/invert/runs/run_01/reports/manufacturability.rpt --run_path /openlane/designs/invert/runs/run_01"
+
